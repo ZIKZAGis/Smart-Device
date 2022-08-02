@@ -1,3 +1,17 @@
+// const listItem = Array.from(document.querySelectorAll('.footer__item'));
+
+// const accardion = () => {
+//   if (window.innerWidth <= 769) {
+//     listItem.forEach(function (e) {
+//       e.addEventListener('click', () => {
+//         e.classList.toggle('footer__item--opened');
+//       });
+//     });
+//   }
+// };
+
+// accardion();
+
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 
