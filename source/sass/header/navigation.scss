@@ -1,6 +1,8 @@
 .navigation {
+  position: relative;
   background: linear-gradient(to bottom, $dark-blue 90%, transparent 100%);
   padding: 20px 0 25px;
+  z-index: 2;
 
   nav {
     display: flex;

@@ -18,6 +18,7 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 30px;
+  cursor: pointer;
 
   p:first-child {
     font-family: $ff-bold;
@@ -34,6 +35,16 @@
     line-height: 14px;
     margin: 0;
   }
+
+  &:hover {
+    color: $light-blue;
+    opacity: 0.6;
+  }
+
+  &:active {
+    color: $light-blue;
+    opacity: 0.3;
+  }
 }
 
 .footer__social-list {
@@ -47,6 +58,14 @@
   a {
     display: block;
     padding: 5px;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 }
 
@@ -76,5 +95,15 @@
     line-height: 22px;
     color: $default-white;
     opacity: 0.7;
+
+    &:hover {
+      color: $light-blue;
+      opacity: 0.6;
+    }
+
+    &:active {
+      color: $light-blue;
+      opacity: 0.3;
+    }
   }
 }

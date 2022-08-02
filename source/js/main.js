@@ -1,3 +1,11 @@
+const textReplacement = () => {
+  if (window.innerWidth <= 769) {
+    document.querySelector('.welcome a').textContent = 'бесплатная консультация';
+  }
+};
+
+textReplacement();
+
 // const listItem = Array.from(document.querySelectorAll('.footer__item'));
 
 // const accardion = () => {
