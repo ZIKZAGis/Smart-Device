@@ -2,6 +2,7 @@
   position: relative;
   color: $white;
   background: center / cover no-repeat url("../img/main_bg.jpg") $dark-blue;
+  margin-bottom: 120px;
 
   &::before {
     content: "";
@@ -16,5 +17,13 @@
 
   a {
     color: $white;
+  }
+
+  @include vp-1024 {
+    margin-bottom: 80px;
+  }
+
+  @include vp-770 {
+    margin-bottom: 50px;
   }
 }
