@@ -10,9 +10,11 @@
 
 .footer__top {
   margin-right: auto;
+  padding-right: 20px;
 }
 
 .footer__logo {
+  width: 215px;
   color: $white;
   display: flex;
   align-items: center;
@@ -71,7 +73,7 @@
 
 .footer__links {
   display: flex;
-  gap: 30px;
+  column-gap: 30px;
 
   ul {
     list-style: none;
@@ -89,10 +91,15 @@
     margin: 0 0 20px;
   }
 
+  li {
+    margin-bottom: 10px;
+  }
+
   a {
+    display: block;
     font-family: $ff-ptmono;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 20px;
     color: $default-white;
     opacity: 0.7;
 
@@ -104,6 +111,133 @@
     &:active {
       color: $light-blue;
       opacity: 0.3;
+    }
+  }
+}
+
+.footer__navigation {
+  ul {
+    column-count: 2;
+  }
+
+  li {
+    max-width: 220px;
+    margin-right: 10px;
+  }
+}
+
+.footer__contacts {
+  li {
+    max-width: 345px;
+  }
+}
+
+@include vp-1024 {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer__top {
+    display: flex;
+    align-items: center;
+    margin: 0 0 35px;
+    padding-right: 0;
+  }
+
+  .footer__logo {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  .footer__links {
+    gap: initial;
+    justify-content: space-between;
+  }
+
+  .footer__navigation {
+    ul {
+      column-count: 1;
+    }
+
+    li {
+      margin-right: 0;
+    }
+  }
+
+  .footer__contacts {
+    li {
+      max-width: 320px;
+    }
+  }
+}
+
+@include vp-770 {
+  .footer {
+    padding: 35px 0;
+  }
+
+  .footer__wrapper {
+    padding: 0;
+  }
+
+  .footer__top {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  .footer__logo {
+    margin: 0 0 15px;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    border-top: 1px solid $white;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .footer__block {
+    position: relative;
+    border-bottom: 1px solid $white;
+
+    h2 {
+      margin: 20px;
+      line-height: 19px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 1px;
+      top: 29px;
+      right: 27px;
+      background-color: $white;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 1px;
+      top: 29px;
+      right: 27px;
+      background-color: $white;
+      transform: rotate(90deg);
+      transition: all ease 0.5s;
+    }
+  }
+
+  .footer__block--opened {
+    ul {
+      display: block;
+      margin-left: 20px;
+    }
+
+    &::after {
+      transform: rotate(0deg);
     }
   }
 }
