@@ -1,0 +1,105 @@
+.about-as {
+  position: relative;
+  color: $dark-blue;
+  padding-left: 250px;
+  margin-bottom: 120px;
+
+  ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  h2 {
+    font-family: $ff-regular;
+    font-size: 36px;
+    line-height: 51px;
+    font-weight: 400;
+    margin: 0 0 15px;
+  }
+
+  p {
+    font-family: $ff-ptmono;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0 0 20px;
+  }
+
+  button {
+    min-width: 155px;
+    font-family: $ff-bold;
+    font-size: 14px;
+    line-height: 15px;
+    color: $light-blue;
+    text-transform: uppercase;
+    border: 1px solid $light-blue;
+    border-radius: 3px;
+    background-color: $default-white;
+    padding: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $light-blue;
+      color: $white;
+    }
+
+    &:active {
+      opacity: 0.6;
+      background-color: $light-blue;
+      color: $white;
+    }
+  }
+
+  span {
+    color: transparent;
+    font-family: $ff-bold;
+    font-size: 156px;
+    line-height: 156px;
+    display: block;
+    position: absolute;
+    left: -65px;
+    top: 90px;
+    transform: rotate(-90deg);
+    background: no-repeat center center url("/../img/mask_bg.jpg");
+    background-clip: text;
+  }
+}
+
+@include vp-1024 {
+  .about-as {
+    margin-bottom: 80px;
+    padding-left: 230px;
+
+    span {
+      left: -10px;
+      top: 90px;
+    }
+  }
+}
+
+@include vp-770 {
+  .about-as {
+    h2 {
+      font-size: 28px;
+      line-height: 39px;
+    }
+
+    ul {
+      display: block;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    button {
+      min-width: 160px;
+      padding: 9px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
