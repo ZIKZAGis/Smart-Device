@@ -194,8 +194,11 @@
     border-top: 1px solid $white;
   }
 
-  ul {
-    display: none;
+  .footer__navigation,
+  .footer__contacts {
+    ul {
+      display: none;
+    }
   }
 
   .footer__block {
@@ -234,6 +237,7 @@
     ul {
       display: block;
       margin-left: 20px;
+      padding-bottom: 10px;
     }
 
     &::after {
