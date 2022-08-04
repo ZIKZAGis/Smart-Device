@@ -1,0 +1,230 @@
+.feedback {
+  position: relative;
+  background-color: $light-blue;
+  padding-top: 170px;
+  padding-bottom: 250px;
+  color: $default-white;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 0;
+    border-top: 840px solid $dark-blue;
+    border-right: 970px solid transparent;
+    right: 50%;
+    top: 0;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  @include vp-1024 {
+    padding-top: 50px;
+    padding-bottom: 125px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include vp-770 {
+    padding-bottom: 90px;
+  }
+}
+
+.feedback__wrapper {
+  position: relative;
+  z-index: 2;
+
+  h2 {
+    width: 580px;
+    font-family: $ff-regular;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 51px;
+    margin: 0 0 15px auto;
+  }
+
+  p {
+    width: 580px;
+    font-family: $ff-ptmono;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0 0 35px auto;
+  }
+}
+
+.feedback__form {
+  position: relative;
+  display: flex;
+  width: 585px;
+  gap: 20px 30px;
+  flex-wrap: wrap;
+  margin-left: auto;
+
+  input,
+  textarea {
+    border: none;
+    border-radius: 3px;
+    background-color: $form-blue;
+    color: $default-white;
+
+    &::placeholder {
+      font-family: $ff-ptmono;
+      font-size: 16px;
+      line-height: 21px;
+      color: $default-white;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 15px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 25px 15px;
+    min-height: 155px;
+  }
+
+  div:first-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px 30px;
+  }
+
+  div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button {
+    width: 265px;
+    font-family: $ff-bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 15px 25px;
+    color: $default-white;
+    border: none;
+    border-radius: 3px;
+    background-color: $dark-blue;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $default-white;
+      color: $dark-blue;
+    }
+
+    &:active {
+      opacity: 0.6;
+      background-color: $default-white;
+      color: $dark-blue;
+    }
+  }
+
+  span {
+    position: relative;
+    display: block;
+    max-width: 234px;
+    font-family: $ff-ptmono;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 75px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -26px;
+      top: 50%;
+      box-sizing: border-box;
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      transform: translateY(-50%);
+      background-color: $default-white;
+      cursor: pointer;
+    }
+  }
+
+  input[type="checkbox"]:checked + span::before {
+    border: 1px solid $default-white;
+    background: center no-repeat url("../img/check.svg") transparent;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 510px;
+    height: 285px;
+    left: -650px;
+    top: -40px;
+    background-image: url("../img/airplane.png");
+  }
+}
+
+@include vp-1024 {
+  .feedback__wrapper {
+    h2,
+    p {
+      margin-left: 0;
+    }
+  }
+
+  .feedback__form {
+    width: 100%;
+
+    &::before {
+      display: none;
+    }
+
+    textarea {
+      width: 100%;
+    }
+  }
+}
+
+@include vp-770 {
+  .feedback__wrapper {
+    h2 {
+      width: 100%;
+      font-size: 30px;
+      line-height: 42px;
+    }
+
+    p {
+      width: 100%;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  .feedback__form {
+    div:first-child {
+      grid-template-columns: 1fr;
+    }
+
+    div:last-child {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+
+    button {
+      width: 100%;
+    }
+
+    span {
+      width: calc(100% - 30px);
+      max-width: none;
+      margin-left: 30px;
+    }
+  }
+}
