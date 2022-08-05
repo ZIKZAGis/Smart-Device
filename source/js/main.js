@@ -5,11 +5,13 @@ const popupBox = document.querySelector('#popup');
 const popupButtonClose = document.querySelector('.popup__close');
 const inputName = document.querySelector('#name');
 const inputPhone = document.querySelectorAll('input[name="number-phone"]');
+const aboutAsText = document.querySelectorAll('.about-as p');
+const showMoreButton = document.querySelector('.about-as button');
 
 
 const phoneMask = () => {
   let maskOptions = {
-    mask: '+{7} (000) 000 00 00',
+    mask: '+{7}(000)0000000',
     lazy: false,
   };
 
@@ -55,8 +57,26 @@ const accardion = () => {
   }
 };
 
+const showMore = () => {
+  aboutAsText[2].style.display = 'none';
+  aboutAsText[3].style.display = 'none';
+
+  showMoreButton.addEventListener('click', () => {
+    if (aboutAsText[2].style.display === 'block') {
+      aboutAsText[2].style.display = 'none';
+      aboutAsText[3].style.display = 'none';
+      showMoreButton.textContent = 'подробнее';
+    } else {
+      aboutAsText[2].style.display = 'block';
+      aboutAsText[3].style.display = 'block';
+      showMoreButton.textContent = 'свернуть';
+    }
+  });
+};
+
 const runsScripts = () => {
   openPopup();
+  showMore();
   textReplacement();
   accardion();
   phoneMask();
