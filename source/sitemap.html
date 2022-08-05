@@ -44,13 +44,13 @@
               </a>
             </li>
           </ul>
-          <button type="button">Заказать звонок</button>
+          <button type="button" id="call">Заказать звонок</button>
         </nav>
       </div>
       <div class="header__welcome welcome container">
         <h1>Печатные платы</h1>
         <p>производство и&nbsp;монтаж, поставка комплектующих,<br> блоков и&nbsp;модулей</p>
-        <a href="#">Получить бесплатную консультацию</a>
+        <a href="#feedback">Получить бесплатную консультацию</a>
       </div>
     </header>
     <main>
@@ -153,7 +153,7 @@
           </div>
         </div>
       </section>
-      <section class="feedback">
+      <section class="feedback" id="feedback">
         <div class="feedback__wrapper container">
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
@@ -168,15 +168,36 @@
             </div>
             <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
             <div>
-              <button type="button" type="submit">Задать вопрос</button>
+              <button type="submit">Задать вопрос</button>
               <label>
-                <input class="visually-hidden" type="checkbox" name="agreement" checked requiared>
+                <input type="checkbox" name="agreement" checked required>
                 <span>Я согласен на обработку  персональных данных</span>
               </label>
             </div>
           </form>
         </div>
       </section>
+      <div class="popup popup--closed" id="popup">
+        <div class="popup__wrapper">
+          <h2>Закажите звонок</h2>
+          <p>Оставьте контакты, мы&nbsp;проконсультируем вас&nbsp;бесплатно в&nbsp;удобное время</p>
+          <button class="popup__close" type="button"></button>
+          <form class="popup__form" action="https://echo.htmlacademy.ru" method="get">
+            <label>
+              <input type="text" name="name" id="name" placeholder="Имя" required>
+            </label>
+            <label>
+              <input type="number" name="number-phone" placeholder="Телефон" required>
+            </label>
+            <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
+            <button type="submit">Отправить</button>
+            <label>
+              <input type="checkbox" name="agreement" checked required>
+              <span>Я согласен на обработку  персональных данных</span>
+            </label>
+          </form>
+        </div>
+      </div>
     </main>
     <footer class="footer">
       <div class="footer__wrapper container">

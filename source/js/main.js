@@ -1,3 +1,24 @@
+const requestCall = document.querySelector('#call');
+const popupBox = document.querySelector('#popup');
+const popupButtonClose = document.querySelector('.popup__close');
+const inputName = document.querySelector('#name');
+
+const closePopup = () => {
+  popupButtonClose.addEventListener('click', () => {
+    document.querySelector('body').style.overflow = 'scroll';
+    popupBox.classList.add('popup--closed');
+  });
+};
+
+const openPopup = () => {
+  requestCall.addEventListener('click', () => {
+    document.querySelector('body').style.overflow = 'hidden';
+    popupBox.classList.remove('popup--closed');
+    inputName.focus();
+    closePopup();
+  });
+};
+
 const textReplacement = () => {
   if (window.innerWidth <= 769) {
     document.querySelector('.welcome a').textContent = 'бесплатная консультация';
@@ -18,6 +39,7 @@ const accardion = () => {
 };
 
 const runsScripts = () => {
+  openPopup();
   textReplacement();
   accardion();
 };
