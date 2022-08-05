@@ -1,7 +1,24 @@
+import IMask from 'imask';
+
 const requestCall = document.querySelector('#call');
 const popupBox = document.querySelector('#popup');
 const popupButtonClose = document.querySelector('.popup__close');
 const inputName = document.querySelector('#name');
+const inputPhone = document.querySelectorAll('input[name="number-phone"]');
+
+
+const phoneMask = () => {
+  let maskOptions = {
+    mask: '+{7} (000) 000 00 00',
+    lazy: false,
+  };
+
+  inputPhone.forEach((e) => {
+    e.addEventListener('focus', () => {
+      let mask = new IMask(e, maskOptions);
+    });
+  });
+};
 
 const closePopup = () => {
   popupButtonClose.addEventListener('click', () => {
@@ -42,6 +59,7 @@ const runsScripts = () => {
   openPopup();
   textReplacement();
   accardion();
+  phoneMask();
 };
 
 runsScripts();
