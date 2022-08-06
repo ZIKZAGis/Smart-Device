@@ -1,6 +1,6 @@
 .welcome {
   position: relative;
-  padding: 185px 125px 280px;
+  padding: 305px 145px 280px;
   z-index: 3;
 
   h1 {
@@ -8,15 +8,15 @@
     font-size: 80px;
     line-height: 90px;
     text-transform: uppercase;
-    letter-spacing: 7px;
-    margin: 0 0 40px;
+    letter-spacing: 5.6px;
+    margin: 0 0 36px;
   }
 
   p {
     font-family: $ff-ptmono;
     font-size: 22px;
     line-height: 35px;
-    margin-bottom: 40px;
+    margin: 0 0 44px;
   }
 
   a {
@@ -44,17 +44,18 @@
   }
 
   @include vp-1024 {
-    padding-top: 80px;
+    padding-top: 187px;
     padding-bottom: 205px;
 
     h1 {
       font-size: 60px;
       line-height: 60px;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 7px;
     }
 
     p {
-      margin-bottom: 50px;
+      margin-bottom: 55px;
     }
 
     a {
@@ -63,17 +64,19 @@
   }
 
   @include vp-770 {
-    padding-top: 80px;
+    padding-top: 150px;
     padding-bottom: 190px;
 
     h1 {
       font-size: 36px;
-      line-height: 37px;
+      line-height: 42px;
+      letter-spacing: 2.5px;
     }
 
     p {
       font-size: 14px;
-      line-height: 18px;
+      line-height: 22px;
+      margin-bottom: 44px;
     }
 
     a {

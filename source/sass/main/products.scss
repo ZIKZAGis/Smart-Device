@@ -4,7 +4,7 @@
 }
 
 .products__wrapper {
-  padding-top: 70px;
+  padding-top: 66px;
   padding-bottom: 140px;
 
   h2 {
@@ -12,7 +12,7 @@
     font-size: 36px;
     line-height: 50px;
     font-weight: 400;
-    margin: 0 0 50px;
+    margin: 0 0 54px;
   }
 }
 
@@ -25,10 +25,10 @@
     position: relative;
     display: block;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 49px;
     padding-left: 40px;
     padding-right: 40px;
-    padding-bottom: calc(154% + 1px);
+    padding-bottom: calc(154% + 2px);
     background: center / cover no-repeat url("../img/main_bg.jpg") fixed;
 
     &::before {
@@ -85,8 +85,12 @@
 
 @include vp-1024 {
   .products__wrapper {
-    padding-top: 60px;
-    padding-bottom: 75px;
+    padding-top: 55px;
+    padding-bottom: 77px;
+
+    h2 {
+      margin-bottom: 37px;
+    }
   }
 
   .products__links {

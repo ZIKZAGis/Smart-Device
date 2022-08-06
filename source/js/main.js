@@ -45,12 +45,14 @@ const textReplacement = () => {
   }
 };
 
-const listItem = Array.from(document.querySelectorAll('.footer__block'));
-
 const accardion = () => {
+  const listItem = Array.from(document.querySelectorAll('.footer__block'));
   if (window.innerWidth <= 769) {
     listItem.forEach(function (e) {
       e.addEventListener('click', () => {
+        listItem.forEach(function (elem) {
+          elem.classList.remove('footer__block--opened');
+        });
         e.classList.toggle('footer__block--opened');
       });
     });
@@ -75,6 +77,7 @@ const showMore = () => {
 };
 
 const runsScripts = () => {
+  document.querySelector('.footer__links').classList.remove('footer__links--nojs');
   openPopup();
   showMore();
   textReplacement();

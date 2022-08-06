@@ -1,8 +1,9 @@
 .navigation {
-  position: relative;
+  position: fixed;
+  width: 100%;
   background: linear-gradient(to bottom, $dark-blue 90%, transparent 100%);
   padding: 20px 0 25px;
-  z-index: 2;
+  z-index: 5;
 
   nav {
     display: flex;
@@ -37,8 +38,8 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    gap: 20px 40px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -66,8 +67,8 @@
     font-family: $ff-ptmono;
     font-size: 16px;
     line-height: 18px;
-    padding: 20px;
-    min-width: 225px;
+    min-width: 212px;
+    padding: 18px 0 20px;
   }
 
   button {
@@ -80,8 +81,10 @@
     border: 1px solid $white;
     border-radius: 3px;
     background-color: transparent;
+    letter-spacing: 0.6px;
+    margin-top: -5px;
     margin-right: 60px;
-    padding: 10px 15px;
+    padding: 10px 15px 14px;
     cursor: pointer;
 
     &:hover {
@@ -102,7 +105,10 @@
     }
 
     ul {
+      gap: 0;
       justify-content: flex-end;
+      margin-top: -15px;
+      margin-right: 10px;
     }
 
     li {
@@ -137,6 +143,10 @@
       span {
         display: none;
       }
+    }
+
+    ul {
+      margin: 0;
     }
   }
 }

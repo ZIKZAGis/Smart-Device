@@ -14,7 +14,6 @@
     height: 0;
     border-top: 840px solid $dark-blue;
     border-right: 970px solid transparent;
-    right: 50%;
     top: 0;
     opacity: 0.5;
     z-index: 0;
@@ -37,14 +36,16 @@
 .feedback__wrapper {
   position: relative;
   z-index: 2;
+  padding-right: 30px;
 
   h2 {
     width: 580px;
     font-family: $ff-regular;
     font-size: 36px;
     font-weight: 400;
-    line-height: 51px;
+    line-height: 44px;
     margin: 0 0 15px auto;
+    transform: translateX(-5px);
   }
 
   p {
@@ -59,7 +60,7 @@
 .feedback__form {
   position: relative;
   display: flex;
-  width: 585px;
+  width: 580px;
   gap: 20px 30px;
   flex-wrap: wrap;
   margin-left: auto;
@@ -101,7 +102,8 @@
     display: flex;
     position: relative;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    padding-top: 17px;
   }
 
   button {
@@ -110,12 +112,13 @@
     text-transform: uppercase;
     font-size: 16px;
     line-height: 19px;
-    padding: 15px 25px;
     color: $default-white;
+    letter-spacing: 1px;
     border: none;
     border-radius: 3px;
     background-color: $dark-blue;
     cursor: pointer;
+    padding: 13px 25px;
 
     &:hover {
       background-color: $default-white;
@@ -169,7 +172,9 @@
     background: center no-repeat url("../img/check.svg") transparent;
   }
 
-  input[type="checkbox"]:focus + span::before {
+  input[type="checkbox"]:focus + span::before,
+  input[type="checkbox"]:hover + span::before {
+    border: 1px solid;
     border-color: $dark-blue;
   }
 
@@ -178,17 +183,23 @@
     position: absolute;
     width: 510px;
     height: 285px;
-    left: -650px;
-    top: -40px;
+    left: -629px;
+    top: -39px;
     background-image: url("../img/airplane.png");
   }
 }
 
 @include vp-1024 {
   .feedback__wrapper {
-    h2,
+    h2 {
+      margin-left: 0;
+      margin-bottom: 10px;
+      transform: none;
+    }
+
     p {
       margin-left: 0;
+      margin-bottom: 25px;
     }
   }
 
@@ -200,7 +211,19 @@
     }
 
     textarea {
-      width: 100%;
+      padding-top: 32px;
+    }
+
+    div:last-child {
+      align-items: center;
+    }
+
+    button {
+      padding: 16px 25px 10px;
+    }
+
+    span {
+      margin-left: 110px;
     }
   }
 }

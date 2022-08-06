@@ -55,7 +55,7 @@
   gap: 15px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 10px;
 
   a {
     display: block;
@@ -84,8 +84,9 @@
   h2 {
     font-family: $ff-regular;
     font-size: 15px;
-    line-height: 16px;
+    line-height: 27px;
     text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 400;
     color: $default-white;
     margin: 0 0 20px;
@@ -118,11 +119,11 @@
 .footer__navigation {
   ul {
     column-count: 2;
+    column-gap: 25px;
   }
 
   li {
-    max-width: 220px;
-    margin-right: 10px;
+    max-width: 222px;
   }
 }
 
@@ -140,7 +141,7 @@
   .footer__top {
     display: flex;
     align-items: center;
-    margin: 0 0 35px;
+    margin: 0 0 30px;
     padding-right: 0;
   }
 
@@ -168,6 +169,11 @@
     li {
       max-width: 320px;
     }
+  }
+
+  .footer__social-list {
+    margin-right: -5px;
+    padding: 0;
   }
 }
 
@@ -242,6 +248,20 @@
 
     &::after {
       transform: rotate(0deg);
+    }
+  }
+
+  .footer__links--nojs {
+    .footer__block::before,
+    .footer__block::after {
+      display: none;
+    }
+
+    .footer__navigation ul,
+    .footer__contacts ul {
+      display: block;
+      margin-left: 20px;
+      padding-bottom: 20px;
     }
   }
 }

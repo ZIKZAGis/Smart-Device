@@ -7,7 +7,14 @@
     <meta name="description" content="Смарт Девайсы">
     <title>Smart Device</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="preload" href="" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PTMono-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/PTMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Medium.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/RobotoCondensed-Bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/RobotoCondensed-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
   </head>
   <body class="wrapper">
     <header class="header">
@@ -107,18 +114,20 @@
       <section class="about-as container" id="about">
         <div>
           <h2>О&nbsp;компании</h2>
-          <p>
-            Мы поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10 дней.
-          </p>
-          <p>
-            Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
-          </p>
-          <p>
-            Smart Device - это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000 клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14 офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.
-          </p>
-          <p>
-            Мы стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов
-          </p>
+          <div>
+            <p>
+              Мы поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10 дней.
+            </p>
+            <p>
+              Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
+            </p>
+            <p>
+              Smart Device - это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000 клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14 офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.
+            </p>
+            <p>
+              Мы стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов
+            </p>
+          </div>
           <button type="button">Подробнее</button>
           <span>2022</span>
         </div>
@@ -156,7 +165,7 @@
                 <input type="text" name="number-phone" placeholder="Телефон" required>
               </label>
             </div>
-            <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
+            <textarea name="question" id="question" placeholder="Ваш вопрос"></textarea>
             <div>
               <button type="submit">Задать вопрос</button>
               <label>
@@ -179,7 +188,7 @@
             <label>
               <input type="text" name="number-phone" id="phone" placeholder="Телефон" required>
             </label>
-            <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
+            <textarea name="question" id="question" placeholder="Ваш вопрос"></textarea>
             <button type="submit">Отправить</button>
             <label>
               <input type="checkbox" name="agreement" checked required>
@@ -223,7 +232,7 @@
             </li>
           </ul>
         </div>
-        <div class="footer__links">
+        <div class="footer__links footer__links--nojs">
           <div class="footer__navigation footer__block">
             <h2>Разделы сайта</h2>
             <span></span>
