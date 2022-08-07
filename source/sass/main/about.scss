@@ -94,23 +94,23 @@
 
 @include vp-770 {
   .about-as {
+    margin-bottom: 76px;
+
     h2 {
       font-size: 28px;
-      line-height: 39px;
+      line-height: 36px;
     }
-
-    // ul {
-    //   display: block;
-    // }
 
     p {
       font-size: 14px;
       line-height: 19px;
+      margin-bottom: 18px;
     }
 
     button {
       min-width: 160px;
       padding: 9px;
+      transform: translateY(-5px);
     }
 
     span {

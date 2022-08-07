@@ -29,6 +29,7 @@
   }
 
   @include vp-770 {
+    padding-top: 47px;
     padding-bottom: 90px;
   }
 }
@@ -234,12 +235,14 @@
       width: 100%;
       font-size: 30px;
       line-height: 42px;
+      margin-bottom: 8px;
     }
 
     p {
       width: 100%;
       font-size: 14px;
       line-height: 19px;
+      margin-bottom: 34px;
     }
   }
 
@@ -252,7 +255,13 @@
       display: grid;
       width: 100%;
       grid-template-columns: 1fr;
-      row-gap: 20px;
+      row-gap: 23px;
+      padding-top: 12px;
+    }
+
+    textarea {
+      min-height: 180px;
+      padding-top: 26px;
     }
 
     button {
