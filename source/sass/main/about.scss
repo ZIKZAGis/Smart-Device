@@ -48,7 +48,8 @@
     }
   }
 
-  span {
+  &::before {
+    content: "2022";
     color: transparent;
     font-family: $ff-bold;
     font-size: 156px;
@@ -85,7 +86,7 @@
       letter-spacing: 1px;
     }
 
-    span {
+    &::before {
       left: -21px;
       top: 88px;
     }
@@ -113,6 +114,7 @@
       transform: translateY(-5px);
     }
 
+    &::before,
     span {
       display: none;
     }
