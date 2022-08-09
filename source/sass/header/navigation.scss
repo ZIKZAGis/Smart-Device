@@ -12,26 +12,14 @@
   }
 
   div {
-    min-width: 215px;
+    min-width: 146px;
 
     a {
       padding: 10px 0;
+    }
 
-      div p:first-child {
-        font-family: $ff-bold;
-        font-size: 25px;
-        line-height: 29px;
-        margin: 0;
-      }
-
-      div p:last-child {
-        font-family: $ff-roboto;
-        color: $default-white;
-        opacity: 0.7;
-        font-size: 12px;
-        line-height: 14px;
-        margin: 0;
-      }
+    a:first-child {
+      cursor: default;
     }
   }
 
@@ -45,7 +33,7 @@
     padding: 0;
   }
 
-  a {
+  a:not(:first-child) {
     display: flex;
     justify-content: initial;
     gap: 15px;
@@ -100,6 +88,8 @@
   }
 
   @include vp-1024 {
+    position: relative;
+
     div a {
       padding: 0;
     }
@@ -128,20 +118,29 @@
   }
 
   @include vp-770 {
+    position: relative;
     padding-top: 10px;
     padding-bottom: 20px;
 
     div {
-      min-width: 35px;
-      padding-top: 5px;
+      position: relative;
+      min-width: 0;
+      width: 35px;
+      height: 35px;
+      overflow: hidden;
 
-      img {
-        width: 35px;
+      a {
+        position: absolute;
+        left: 0;
+        top: 0;
         height: 35px;
+        width: 140px;
       }
 
-      div {
-        display: none;
+      img {
+
+        height: 35px;
+        width: auto;
       }
     }
 

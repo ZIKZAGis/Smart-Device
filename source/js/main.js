@@ -8,7 +8,6 @@ const inputPhone = document.querySelectorAll('input[name="number-phone"]');
 const aboutAsText = document.querySelectorAll('.about-as p');
 const showMoreButton = document.querySelector('.about-as button');
 
-
 const phoneMask = () => {
   let maskOptions = {
     mask: '+{7}(000)0000000',
@@ -39,24 +38,47 @@ const openPopup = () => {
 };
 
 const textReplacement = () => {
-  if (window.innerWidth <= 769) {
-    document.querySelector('.welcome a').textContent = 'бесплатная консультация';
-    document.querySelector('.products__wrapper h2').textContent = 'Товары и услуги Smart Device';
-  }
+  const textChange = () => {
+    if (window.screen.width <= 769) {
+      document.querySelector('.welcome a').textContent = 'бесплатная консультация';
+      document.querySelector('.products__wrapper h2').textContent = 'Товары и услуги Smart Device';
+    } else {
+      document.querySelector('.welcome a').textContent = 'получить бесплатную консультацию';
+      document.querySelector('.products__wrapper h2').textContent = 'Smart Device предлагает следующие товары и услуги';
+    }
+  };
+
+  window.addEventListener('load', () => {
+    textChange();
+  });
+
+  window.addEventListener('resize', () => {
+    textChange();
+  });
 };
 
 const accardion = () => {
   const listItem = Array.from(document.querySelectorAll('.footer__block'));
-  if (window.innerWidth <= 769) {
-    listItem.forEach(function (e) {
-      e.addEventListener('click', () => {
-        listItem.forEach(function (elem) {
-          elem.classList.remove('footer__block--opened');
+  const mobileAccardion = () => {
+    if (window.screen.width <= 769) {
+      listItem.forEach(function (e) {
+        e.addEventListener('click', () => {
+          listItem.forEach(function (elem) {
+            elem.classList.remove('footer__block--opened');
+          });
+          e.classList.toggle('footer__block--opened');
         });
-        e.classList.toggle('footer__block--opened');
       });
-    });
-  }
+    }
+  };
+
+  window.addEventListener('load', () => {
+    mobileAccardion();
+  });
+
+  window.addEventListener('resize', () => {
+    mobileAccardion();
+  });
 };
 
 const showMore = () => {

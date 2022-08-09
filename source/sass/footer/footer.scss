@@ -20,39 +20,14 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 30px;
-  cursor: pointer;
-
-  p:first-child {
-    font-family: $ff-bold;
-    font-size: 25px;
-    line-height: 29px;
-    margin: 0;
-  }
-
-  p:last-child {
-    font-family: $ff-roboto;
-    color: $default-white;
-    opacity: 0.7;
-    font-size: 12px;
-    line-height: 14px;
-    margin: 0;
-  }
-
-  &:hover {
-    color: $light-blue;
-    opacity: 0.6;
-  }
-
-  &:active {
-    color: $light-blue;
-    opacity: 0.3;
-  }
+  cursor: default;
 }
 
 .footer__social-list {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  max-width: 215px;
   list-style: none;
   margin: 0;
   padding: 0 0 0 10px;
