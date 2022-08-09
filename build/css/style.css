@@ -620,36 +620,15 @@ button,
 }
 
 .navigation div {
-<<<<<<< HEAD
   min-width: 146px;
-=======
-  min-width: 215px;
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
 }
 
 .navigation div a {
   padding: 10px 0;
 }
 
-<<<<<<< HEAD
 .navigation div a:first-child {
   cursor: default;
-=======
-.navigation div a div p:first-child {
-  font-family: "Roboto Condensed Bold", "Arial Bold", sans-serif;
-  font-size: 25px;
-  line-height: 29px;
-  margin: 0;
-}
-
-.navigation div a div p:last-child {
-  font-family: "Roboto", "Arial", sans-serif;
-  color: #ffffff;
-  opacity: 0.7;
-  font-size: 12px;
-  line-height: 14px;
-  margin: 0;
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
 }
 
 .navigation ul {
@@ -667,11 +646,7 @@ button,
   padding: 0;
 }
 
-<<<<<<< HEAD
 .navigation a:not(:first-child) {
-=======
-.navigation a {
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -685,20 +660,12 @@ button,
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .navigation a:not(:first-child):hover {
-=======
-.navigation a:hover {
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
   color: #00b2ff;
   opacity: 0.6;
 }
 
-<<<<<<< HEAD
 .navigation a:not(:first-child):active {
-=======
-.navigation a:active {
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
   color: #00b2ff;
   opacity: 0.3;
 }
@@ -1496,37 +1463,7 @@ button,
   align-items: center;
   gap: 15px;
   margin-bottom: 30px;
-<<<<<<< HEAD
   cursor: default;
-=======
-  cursor: pointer;
-}
-
-.footer__logo p:first-child {
-  font-family: "Roboto Condensed Bold", "Arial Bold", sans-serif;
-  font-size: 25px;
-  line-height: 29px;
-  margin: 0;
-}
-
-.footer__logo p:last-child {
-  font-family: "Roboto", "Arial", sans-serif;
-  color: #ffffff;
-  opacity: 0.7;
-  font-size: 12px;
-  line-height: 14px;
-  margin: 0;
-}
-
-.footer__logo:hover {
-  color: #00b2ff;
-  opacity: 0.6;
-}
-
-.footer__logo:active {
-  color: #00b2ff;
-  opacity: 0.3;
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
 }
 
 .footer__social-list {
@@ -1536,10 +1473,7 @@ button,
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 15px;
-<<<<<<< HEAD
   max-width: 215px;
-=======
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
   list-style: none;
   margin: 0;
   padding: 0 0 0 10px;
@@ -1633,13 +1567,10 @@ button,
     margin-bottom: 80px;
   }
 
-<<<<<<< HEAD
   .navigation {
     position: relative;
   }
 
-=======
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
   .navigation div a {
     padding: 0;
   }
@@ -1867,16 +1798,12 @@ button,
   }
 
   .navigation {
-<<<<<<< HEAD
     position: relative;
-=======
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
     padding-top: 10px;
     padding-bottom: 20px;
   }
 
   .navigation div {
-<<<<<<< HEAD
     position: relative;
     min-width: 0;
     width: 35px;
@@ -1895,19 +1822,6 @@ button,
   .navigation div img {
     height: 35px;
     width: auto;
-=======
-    min-width: 35px;
-    padding-top: 5px;
-  }
-
-  .navigation div img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .navigation div div {
-    display: none;
->>>>>>> 2a741aee62985c5673b644d3e16b21fe0ff5376a
   }
 
   .navigation ul {
