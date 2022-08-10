@@ -20,39 +20,14 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 30px;
-  cursor: pointer;
-
-  p:first-child {
-    font-family: $ff-bold;
-    font-size: 25px;
-    line-height: 29px;
-    margin: 0;
-  }
-
-  p:last-child {
-    font-family: $ff-roboto;
-    color: $default-white;
-    opacity: 0.7;
-    font-size: 12px;
-    line-height: 14px;
-    margin: 0;
-  }
-
-  &:hover {
-    color: $light-blue;
-    opacity: 0.6;
-  }
-
-  &:active {
-    color: $light-blue;
-    opacity: 0.3;
-  }
+  cursor: default;
 }
 
 .footer__social-list {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  max-width: 215px;
   list-style: none;
   margin: 0;
   padding: 0 0 0 10px;
@@ -75,22 +50,23 @@
   display: flex;
   column-gap: 30px;
 
+  h2 {
+    font-family: $ff-regular;
+    font-size: 15px;
+    line-height: 27px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $default-white;
+    margin: 0 0 20px;
+    letter-spacing: 0.7px;
+  }
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  h2 {
-    font-family: $ff-regular;
-    font-size: 15px;
-    line-height: 27px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    color: $default-white;
-    margin: 0 0 20px;
-  }
 
   li {
     margin-bottom: 10px;
@@ -117,13 +93,13 @@
 }
 
 .footer__navigation {
-  ul {
-    column-count: 2;
-    column-gap: 25px;
+  div {
+    display: flex;
+    gap: 30px;
   }
 
   li {
-    max-width: 222px;
+    width: 220px;
   }
 }
 
@@ -156,8 +132,8 @@
   }
 
   .footer__navigation {
-    ul {
-      column-count: 1;
+    div {
+      display: block;
     }
 
     li {
