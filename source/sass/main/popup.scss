@@ -1,7 +1,7 @@
 .popup {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   color: $default-white;
@@ -214,5 +214,15 @@
   .popup__close {
     right: 10px;
     top: 10px;
+  }
+}
+
+@media (max-height: 600px) {
+  .popup {
+    overflow: scroll;
+
+    &::before {
+      height: 125%;
+    }
   }
 }

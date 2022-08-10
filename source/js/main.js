@@ -21,11 +21,33 @@ const phoneMask = () => {
   });
 };
 
+const close = () => {
+  document.querySelector('body').style.overflow = 'scroll';
+  popupBox.classList.add('popup--closed');
+};
+
+const clickOverlay = (e) => {
+  if (e.target === popupBox) {
+    close();
+  }
+};
+
 const closePopup = () => {
-  popupButtonClose.addEventListener('click', () => {
-    document.querySelector('body').style.overflow = 'scroll';
-    popupBox.classList.add('popup--closed');
-  });
+  const isEscapeKey = (evt) => evt.key === 'Escape';
+  if (!popupBox.classList.contains('popup--closed')) {
+    document.querySelector('body').addEventListener('keydown', (evt) => {
+      if (isEscapeKey(evt)) {
+        close();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (e.target === popupButtonClose) {
+        close();
+      }
+    });
+
+    document.addEventListener('click', clickOverlay);
+  }
 };
 
 const openPopup = () => {
@@ -35,6 +57,18 @@ const openPopup = () => {
     inputName.focus();
     closePopup();
   });
+
+  // window.addEventListener('load', () => {
+  //   if (window.screen.height <= 600) {
+
+  //   }
+  // });
+
+  // window.addEventListener('resize', () => {
+  //   if (window.screen.height <= 600) {
+
+  //   }
+  // });
 };
 
 const textReplacement = () => {

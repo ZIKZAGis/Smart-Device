@@ -1205,7 +1205,7 @@ button,
 .popup {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   color: #ffffff;
@@ -2140,5 +2140,15 @@ button,
     display: block;
     margin-left: 20px;
     padding-bottom: 20px;
+  }
+}
+
+@media (max-height: 600px) {
+  .popup {
+    overflow: scroll;
+  }
+
+  .popup::before {
+    height: 125%;
   }
 }
