@@ -1,25 +1,45 @@
-import IMask from 'imask';
-
 const requestCall = document.querySelector('#call');
 const popupBox = document.querySelector('#popup');
 const popupButtonClose = document.querySelector('.popup__close');
 const inputName = document.querySelector('#name');
-const inputPhone = document.querySelectorAll('input[name="number-phone"]');
 const aboutAsText = document.querySelectorAll('.about-as p');
 const showMoreButton = document.querySelector('.about-as button');
 
-const phoneMask = () => {
-  let maskOptions = {
-    mask: '+{7}(000)0000000',
-    lazy: false,
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  let eventCalllback = function (e) {
+
+    let el = e.target;
+    let clearVal = el.dataset.phoneClear;
+    let pattern = el.dataset.phonePattern;
+    let matrix_def = '+7(___) ___-__-__';
+    let matrix = pattern ? pattern : matrix_def;
+    let i = 0;
+    let def = matrix.replace(/\D/g, '');
+    let val = e.target.value.replace(/\D/g, '');
+
+    if (clearVal !== 'false' && e.type === 'blur') {
+      if (val.length < matrix.match(/([\_\d])/g).length) {
+        e.target.value = '';
+        return;
+      }
+    }
+    if (def.length >= val.length) {
+      val = def;
+    }
+    e.target.value = matrix.replace(/./g, function (a) {
+      return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
+    });
   };
 
-  inputPhone.forEach((e) => {
-    e.addEventListener('focus', () => {
-      let mask = new IMask(e, maskOptions);
-    });
-  });
-};
+  let phone_inputs = document.querySelectorAll('[data-phone-pattern]');
+  for (let elem of phone_inputs) {
+    for (let ev of ['input', 'blur', 'focus']) {
+      elem.addEventListener(ev, eventCalllback);
+    }
+  }
+});
 
 const close = () => {
   document.querySelector('body').style.overflow = 'scroll';
@@ -55,20 +75,11 @@ const openPopup = () => {
     document.querySelector('body').style.overflow = 'hidden';
     popupBox.classList.remove('popup--closed');
     inputName.focus();
+    document.querySelector('main').setAttribute('tabindex', '-1');
+    document.querySelector('footer').setAttribute('tabindex', '-1');
+    document.querySelector('header').setAttribute('tabindex', '-1');
     closePopup();
   });
-
-  // window.addEventListener('load', () => {
-  //   if (window.screen.height <= 600) {
-
-  //   }
-  // });
-
-  // window.addEventListener('resize', () => {
-  //   if (window.screen.height <= 600) {
-
-  //   }
-  // });
 };
 
 const textReplacement = () => {
@@ -138,7 +149,6 @@ const runsScripts = () => {
   showMore();
   textReplacement();
   accardion();
-  phoneMask();
 };
 
 runsScripts();
