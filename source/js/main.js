@@ -5,16 +5,14 @@ const inputName = document.querySelector('#name');
 const aboutAsText = document.querySelectorAll('.about-as p');
 const showMoreButton = document.querySelector('.about-as button');
 
-
 document.addEventListener('DOMContentLoaded', function () {
-
   let eventCalllback = function (e) {
 
     let el = e.target;
     let clearVal = el.dataset.phoneClear;
     let pattern = el.dataset.phonePattern;
-    let matrix_def = '+7(___) ___-__-__';
-    let matrix = pattern ? pattern : matrix_def;
+    let matrixDef = '+7(___) ___-__-__';
+    let matrix = pattern ? pattern : matrixDef;
     let i = 0;
     let def = matrix.replace(/\D/g, '');
     let val = e.target.value.replace(/\D/g, '');
@@ -29,27 +27,53 @@ document.addEventListener('DOMContentLoaded', function () {
       val = def;
     }
     e.target.value = matrix.replace(/./g, function (a) {
+      // eslint-disable-next-line no-nested-ternary
       return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
     });
   };
 
-  let phone_inputs = document.querySelectorAll('[data-phone-pattern]');
-  for (let elem of phone_inputs) {
+  let phoneInputs = document.querySelectorAll('[data-phone-pattern]');
+  for (let elem of phoneInputs) {
     for (let ev of ['input', 'blur', 'focus']) {
       elem.addEventListener(ev, eventCalllback);
     }
   }
 });
 
-const close = () => {
-  document.querySelector('body').style.overflow = 'scroll';
-  popupBox.classList.add('popup--closed');
-};
-
 const clickOverlay = (e) => {
   if (e.target === popupBox) {
     close();
   }
+};
+
+const tabindexDisabled = (arr) => {
+  arr.forEach((elem) => {
+    elem.setAttribute('tabindex', '-1');
+  });
+};
+
+const tabindexEnabled = (arr) => {
+  arr.forEach((elem) => {
+    elem.setAttribute('tabindex', '1');
+  });
+};
+
+const textarea = Array.from(document.querySelectorAll('textarea'));
+const input = Array.from(document.querySelectorAll('input'));
+const buttons = Array.from(document.querySelectorAll('button'));
+const links = Array.from(document.querySelectorAll('a'));
+const textareaPop = Array.from(popupBox.querySelectorAll('textarea'));
+const inputPop = Array.from(popupBox.querySelectorAll('input'));
+const buttonsPop = Array.from(popupBox.querySelectorAll('button'));
+const linksPop = Array.from(popupBox.querySelectorAll('a'));
+
+const close = () => {
+  document.querySelector('body').style.overflow = 'scroll';
+  popupBox.classList.add('popup--closed');
+  tabindexEnabled(textarea);
+  tabindexEnabled(input);
+  tabindexEnabled(buttons);
+  tabindexEnabled(links);
 };
 
 const closePopup = () => {
@@ -65,19 +89,31 @@ const closePopup = () => {
         close();
       }
     });
-
     document.addEventListener('click', clickOverlay);
   }
 };
 
 const openPopup = () => {
+  const focusDisabled = () => {
+    tabindexDisabled(textarea);
+    tabindexDisabled(input);
+    tabindexDisabled(buttons);
+    tabindexDisabled(links);
+  };
+
+  const focusEnabledPopup = () => {
+    tabindexEnabled(textareaPop);
+    tabindexEnabled(inputPop);
+    tabindexEnabled(buttonsPop);
+    tabindexEnabled(linksPop);
+  };
+
   requestCall.addEventListener('click', () => {
     document.querySelector('body').style.overflow = 'hidden';
     popupBox.classList.remove('popup--closed');
     inputName.focus();
-    document.querySelector('main').setAttribute('tabindex', '-1');
-    document.querySelector('footer').setAttribute('tabindex', '-1');
-    document.querySelector('header').setAttribute('tabindex', '-1');
+    focusDisabled();
+    focusEnabledPopup();
     closePopup();
   });
 };
