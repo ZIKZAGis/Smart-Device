@@ -1855,6 +1855,7 @@ button,
     width: 100%;
     padding: 10px 20px;
     margin: 0;
+    letter-spacing: 0.7px;
   }
 
   .welcome br {
@@ -1903,7 +1904,7 @@ button,
   }
 
   .about-as {
-    margin-bottom: 76px;
+    margin-bottom: 78px;
   }
 
   .about-as h2 {
