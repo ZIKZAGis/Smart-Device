@@ -1228,6 +1228,8 @@ button,
 .popup__wrapper {
   position: absolute;
   width: 500px;
+  max-height: 100vh;
+  overflow: scroll;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1236,6 +1238,11 @@ button,
   background-color: #00b2ff;
   border-radius: 3px;
   padding: 38px 40px;
+  scrollbar-width: none;
+}
+
+.popup__wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .popup__wrapper h2 {
@@ -2141,15 +2148,5 @@ button,
     display: block;
     margin-left: 20px;
     padding-bottom: 20px;
-  }
-}
-
-@media (max-height: 600px) {
-  .popup {
-    overflow: scroll;
-  }
-
-  .popup::before {
-    height: 125%;
   }
 }

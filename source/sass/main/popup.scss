@@ -24,12 +24,19 @@
 .popup__wrapper {
   position: absolute;
   width: 500px;
+  max-height: 100vh;
+  overflow: scroll;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: $light-blue;
   border-radius: 3px;
   padding: 38px 40px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   h2 {
     font-family: $ff-regular;
@@ -214,15 +221,5 @@
   .popup__close {
     right: 10px;
     top: 10px;
-  }
-}
-
-@media (max-height: 600px) {
-  .popup {
-    overflow: scroll;
-
-    &::before {
-      height: 125%;
-    }
   }
 }
