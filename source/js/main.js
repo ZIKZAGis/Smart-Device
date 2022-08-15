@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
     }
+
     if (def.length >= val.length) {
       val = def;
     }
@@ -68,7 +69,7 @@ const buttonsPop = Array.from(popupBox.querySelectorAll('button'));
 const linksPop = Array.from(popupBox.querySelectorAll('a'));
 
 const close = () => {
-  document.querySelector('body').style.overflow = 'scroll';
+  document.querySelector('body').style.overflowY = 'scroll';
   popupBox.classList.add('popup--closed');
   tabindexEnabled(textarea);
   tabindexEnabled(input);
