@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let def = matrix.replace(/\D/g, '');
     let val = e.target.value.replace(/\D/g, '');
 
+    if (val.length < 11) {
+      document.querySelectorAll('input[type=tel]').forEach((elem) => {
+        elem.style.outlineColor = 'red';
+      });
+    } else {
+      document.querySelectorAll('input[type=tel]').forEach((ele) => {
+        ele.style.outlineColor = 'green';
+      });
+    }
+
     if (clearVal !== 'false' && e.type === 'blur') {
       if (val.length < matrix.match(/([\_\d])/g).length) {
         e.target.value = '';
