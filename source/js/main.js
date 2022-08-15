@@ -162,6 +162,7 @@ const accardion = () => {
   });
 };
 
+
 const showMore = () => {
   aboutAsText[2].style.display = 'none';
   aboutAsText[3].style.display = 'none';
