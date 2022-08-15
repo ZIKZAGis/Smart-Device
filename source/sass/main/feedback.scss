@@ -247,6 +247,9 @@
   }
 
   .feedback__form {
+    display: grid;
+    gap: 20px;
+
     div:first-child {
       grid-template-columns: 1fr;
     }

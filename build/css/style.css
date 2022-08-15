@@ -1990,6 +1990,12 @@ button,
     margin-bottom: 34px;
   }
 
+  .feedback__form {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+  }
+
   .feedback__form div:first-child {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
