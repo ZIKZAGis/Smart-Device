@@ -125,6 +125,15 @@
       padding-left: 30px;
       padding-right: 30px;
       padding-bottom: calc(60% - 2px);
+      background: center / 250% no-repeat url("../img/main_bg.jpg");
+
+      &:first-child {
+        background-position: left;
+      }
+
+      &:last-child {
+        background-position: right;
+      }
 
       &::after {
         width: 40px;
